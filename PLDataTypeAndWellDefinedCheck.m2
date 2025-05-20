@@ -13,6 +13,7 @@ expression PolyptychLattice := P -> (expression polyptychLattice)
 *-
 
 --This is a comment to test the version control--
+--This is another comment to test the version control--
 
 polyptychPair = method()
 polyptychPair (Matrix, List, List):= PolyptychPair => (D, deltaN, deltaM) -> (
