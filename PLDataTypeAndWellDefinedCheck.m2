@@ -89,6 +89,7 @@ isPolyptychPair(Matrix, List, List) := (D,deltaN,deltaM) -> (
     
     all flatten {checksM,checksN,isPLPairSmooth(D,deltaN,deltaM)}
 )
+
 isPolyptychPair(Matrix, SimplicialComplex, SimplicialComplex) := (D,deltaN,deltaM) -> (
     facitsN := maxFaces(deltaN);
     facitsM := maxFaces(deltaM);
@@ -97,12 +98,14 @@ isPolyptychPair(Matrix, SimplicialComplex, SimplicialComplex) := (D,deltaN,delta
         {isCompleteToricVariety(transpose D,facit,facitsM),
         areRaysConvex(transpose D,facit,facitsM)}
     );
+
     checksM :=all flatten for facit in facitsM list(
         {isCompleteToricVariety(D,facit,facitsN),
         areRaysConvex(D,facit,facitsN)}
     );
     
-    all flatten {checksM,checksN,isPLPairSmooth(D,facitsN,facitsM)}
+    all flatten {checksN, checksM, isPLPairSmooth(D,facitsN,facitsM)}
+    
 )
 
 
